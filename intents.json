@@ -1,0 +1,299 @@
+{
+    "intents": [
+
+        {
+            "tag": "greeting",
+
+            "patterns": [
+                "hi",
+                "hello",
+                "hey",
+                "vanakkam",
+                "good morning",
+                "good evening",
+                "hello chatbot",
+                "hi chatbot"
+            ],
+
+            "responses": [
+                "Hello! 👋 I am your TNEA Counselling Assistant. How can I help you?"
+            ]
+        },
+
+
+        {
+            "tag": "tnea_info",
+
+            "patterns": [
+                "what is TNEA",
+                "what is TNEA counselling",
+                "tell me about TNEA",
+                "what does TNEA mean",
+                "explain TNEA counselling",
+                "what is Tamil Nadu engineering admission"
+            ],
+
+            "responses": [
+                "TNEA is the Tamil Nadu Engineering Admissions counselling process used for admission to participating engineering colleges in Tamil Nadu."
+            ]
+        },
+
+
+        {
+            "tag": "eligibility",
+
+            "patterns": [
+                "what is TNEA eligibility",
+                "who is eligible for TNEA",
+                "am I eligible for TNEA",
+                "TNEA eligibility criteria",
+                "what are the eligibility requirements",
+                "can I apply for TNEA"
+            ],
+
+            "responses": [
+                "I can help you understand the eligibility requirements for TNEA."
+            ]
+        },
+
+
+        {
+            "tag": "counselling_process",
+
+            "patterns": [
+                "how does TNEA counselling work",
+                "how to apply for TNEA",
+                "TNEA counselling process",
+                "how can I participate in counselling",
+                "steps in TNEA counselling",
+                "how does counselling work"
+            ],
+
+            "responses": [
+                "TNEA counselling involves registration, payment, certificate verification, rank publication, choice filling, tentative allotment and final allotment according to the applicable counselling process."
+            ]
+        },
+
+
+        {
+            "tag": "college_prediction",
+
+            "patterns": [
+                "I have a cutoff which college can I get",
+                "my cutoff is which college can I get",
+                "what college can I get with my cutoff",
+                "which college can I get for my cutoff",
+                "predict my college",
+                "which college can I get",
+                "can I get a good college",
+                "what colleges can I get",
+                "show colleges based on my cutoff"
+            ],
+
+            "responses": [
+                "Sure! Give me your cutoff, community and preferred branch, and I can check the available TNEA data."
+            ]
+        },
+
+
+        {
+            "tag": "college_search",
+
+            "patterns": [
+                "show colleges",
+                "find colleges",
+                "which colleges are available",
+                "show engineering colleges",
+                "find engineering colleges",
+                "list engineering colleges",
+                "give me colleges"
+            ],
+
+            "responses": [
+                "Sure! Tell me the branch, district or other preference you are looking for."
+            ]
+        },
+
+
+        {
+            "tag": "branch_search",
+
+            "patterns": [
+                "which colleges offer CSE",
+                "show CSE colleges",
+                "colleges for CSE",
+                "which colleges offer ECE",
+                "show ECE colleges",
+                "colleges for AIML",
+                "which colleges offer AI and ML",
+                "find colleges for my branch"
+            ],
+
+            "responses": [
+                "I can search the TNEA dataset for colleges offering your preferred branch."
+            ]
+        },
+
+
+        {
+            "tag": "cutoff_query",
+
+            "patterns": [
+                "what is the cutoff",
+                "what is the college cutoff",
+                "what cutoff is needed",
+                "engineering college cutoff",
+                "previous year cutoff",
+                "historical cutoff",
+                "show cutoff",
+                "what was the cutoff"
+            ],
+
+            "responses": [
+                "I can check the available historical cutoff information from the TNEA dataset."
+            ]
+        },
+
+
+        {
+            "tag": "community_prediction",
+
+            "patterns": [
+                "I am BC which colleges can I get",
+                "I am MBC which college can I get",
+                "I am SC which college can I get",
+                "I am ST which college can I get",
+                "I am BCM which college can I get",
+                "I am SCA which college can I get",
+                "which colleges can I get based on my community"
+            ],
+
+            "responses": [
+                "I can use your community along with your cutoff and preferred branch to estimate suitable colleges."
+            ]
+        },
+
+
+        {
+            "tag": "district_search",
+
+            "patterns": [
+                "show colleges in Chennai",
+                "engineering colleges in Chennai",
+                "colleges in Coimbatore",
+                "show colleges in Madurai",
+                "engineering colleges near me",
+                "colleges in my district",
+                "find colleges by district"
+            ],
+
+            "responses": [
+                "Sure! I can search colleges based on the district you prefer."
+            ]
+        },
+
+
+        {
+            "tag": "college_comparison",
+
+            "patterns": [
+                "compare colleges",
+                "compare two colleges",
+                "which college is better",
+                "compare these colleges",
+                "which is better between these colleges",
+                "compare college facilities",
+                "compare college placements"
+            ],
+
+            "responses": [
+                "I can compare colleges using the information available in the TNEA dataset and other available college information."
+            ]
+        },
+
+
+        {
+            "tag": "college_details",
+
+            "patterns": [
+                "tell me about this college",
+                "college details",
+                "give me college information",
+                "what is this college",
+                "details about the college",
+                "college information"
+            ],
+
+            "responses": [
+                "Sure! Give me the college name or college code and I can look for its available information."
+            ]
+        },
+
+
+        {
+            "tag": "branch_details",
+
+            "patterns": [
+                "what is CSE",
+                "what is ECE",
+                "what is AIML",
+                "what is AI and ML",
+                "tell me about computer science",
+                "tell me about artificial intelligence",
+                "what is mechanical engineering",
+                "what is electrical engineering"
+            ],
+
+            "responses": [
+                "I can explain the engineering branch, its subjects, career options and related information."
+            ]
+        },
+
+
+        {
+            "tag": "fees_query",
+
+            "patterns": [
+                "what are the fees",
+                "college fees",
+                "engineering college fees",
+                "how much is the fee",
+                "TNEA college fees",
+                "how much does engineering cost"
+            ],
+
+            "responses": [
+                "I can help you find fee information when it is available in the dataset."
+            ]
+        },
+
+
+        {
+            "tag": "college_code",
+
+            "patterns": [
+                "what is the college code",
+                "college code",
+                "give me college code",
+                "find college code",
+                "TNEA college code"
+            ],
+
+            "responses": [
+                "Give me the college name and I can search for its TNEA college code."
+            ]
+        },
+
+
+        {
+            "tag": "unknown",
+
+            "patterns": [],
+
+            "responses": [
+                "I'm not sure I understood that. Try asking about TNEA counselling, colleges, branches, cutoffs or college prediction."
+            ]
+        }
+
+    ]
+}

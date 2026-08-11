@@ -1,0 +1,668 @@
+/* ================================
+   TNEA CHATBOT - MAIN CSS
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f4f7fb;
+    --chat-bg: #ffffff;
+    --header-bg: #2563eb;
+    --text-color: #1f2937;
+    --secondary-text: #6b7280;
+    --border-color: #e5e7eb;
+    --user-message: #2563eb;
+    --bot-message: #f1f5f9;
+    --bot-text: #1f2937;
+    --input-bg: #ffffff;
+    --button-hover: #1d4ed8;
+    --shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-mode {
+    --bg-color: #0f172a;
+    --chat-bg: #111827;
+    --header-bg: #1e40af;
+    --text-color: #f8fafc;
+    --secondary-text: #94a3b8;
+    --border-color: #334155;
+    --user-message: #2563eb;
+    --bot-message: #1e293b;
+    --bot-text: #f1f5f9;
+    --input-bg: #1e293b;
+    --button-hover: #3b82f6;
+    --shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* ================================
+   BODY
+   ================================ */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+/* ================================
+   CHAT CONTAINER
+   ================================ */
+
+.chat-container {
+    width: 95%;
+    max-width: 900px;
+    height: 90vh;
+
+    background: var(--chat-bg);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* ================================
+   HEADER
+   ================================ */
+
+.chat-header {
+    background: var(--header-bg);
+    color: white;
+
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Left side of header */
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.header-title h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header-title p {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+/* ================================
+   HEADER BUTTONS
+   ================================ */
+
+.header-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.header-btn {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease;
+}
+
+.header-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.08);
+}
+
+/* ================================
+   ONLINE STATUS
+   ================================ */
+
+.online-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 12px;
+
+    color: #dcfce7;
+}
+
+.online-dot {
+    width: 8px;
+    height: 8px;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+
+    animation: onlinePulse 1.8s infinite;
+}
+
+@keyframes onlinePulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+/* ================================
+   CHAT AREA
+   ================================ */
+
+.chat-box {
+    flex: 1;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    scroll-behavior: smooth;
+}
+
+/* ================================
+   SCROLLBAR
+   ================================ */
+
+.chat-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+
+    border-radius: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* ================================
+   MESSAGE ROW
+   ================================ */
+
+.message-row {
+    display: flex;
+
+    width: 100%;
+}
+
+.message-row.user {
+    justify-content: flex-end;
+}
+
+.message-row.bot {
+    justify-content: flex-start;
+}
+
+/* ================================
+   MESSAGE
+   ================================ */
+
+.message {
+    max-width: 75%;
+
+    padding: 13px 16px;
+
+    border-radius: 16px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    word-wrap: break-word;
+
+    animation: messageAppear 0.25s ease;
+}
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* User message */
+
+.user .message {
+    background: var(--user-message);
+
+    color: white;
+
+    border-bottom-right-radius: 4px;
+}
+
+/* Bot message */
+
+.bot .message {
+    background: var(--bot-message);
+
+    color: var(--bot-text);
+
+    border-bottom-left-radius: 4px;
+}
+
+/* ================================
+   BOT AVATAR
+   ================================ */
+
+.bot-avatar {
+    width: 36px;
+    height: 36px;
+
+    background: var(--header-bg);
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 8px;
+
+    flex-shrink: 0;
+}
+
+/* ================================
+   PREDICTION RESULT
+   ================================ */
+
+.prediction-card {
+    background: var(--chat-bg);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    padding: 15px;
+
+    margin-top: 8px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.prediction-card h3 {
+    color: var(--header-bg);
+
+    margin-bottom: 10px;
+}
+
+.college-result {
+    padding: 12px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.college-result:last-child {
+    border-bottom: none;
+}
+
+.college-name {
+    font-weight: 700;
+
+    color: var(--text-color);
+}
+
+.branch-name {
+    font-size: 13px;
+
+    color: var(--secondary-text);
+
+    margin-top: 4px;
+}
+
+/* ================================
+   INPUT AREA
+   ================================ */
+
+.input-area {
+    padding: 15px 20px;
+
+    background: var(--chat-bg);
+
+    border-top: 1px solid var(--border-color);
+
+    display: flex;
+
+    gap: 10px;
+}
+
+/* ================================
+   INPUT
+   ================================ */
+
+#user-input {
+    flex: 1;
+
+    padding: 13px 16px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 25px;
+
+    outline: none;
+
+    background: var(--input-bg);
+
+    color: var(--text-color);
+
+    font-size: 15px;
+
+    transition: border 0.2s ease;
+}
+
+#user-input:focus {
+    border-color: var(--header-bg);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#user-input::placeholder {
+    color: var(--secondary-text);
+}
+
+/* ================================
+   SEND BUTTON
+   ================================ */
+
+#send-btn {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--header-bg);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: all 0.2s ease;
+}
+
+#send-btn:hover {
+    background: var(--button-hover);
+
+    transform: scale(1.06);
+}
+
+#send-btn:active {
+    transform: scale(0.95);
+}
+
+/* ================================
+   QUICK QUESTIONS
+   ================================ */
+
+.quick-questions {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 10px 20px;
+
+    overflow-x: auto;
+
+    background: var(--chat-bg);
+}
+
+.quick-question {
+    white-space: nowrap;
+
+    padding: 8px 13px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 20px;
+
+    background: transparent;
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: all 0.2s ease;
+}
+
+.quick-question:hover {
+    background: var(--header-bg);
+
+    color: white;
+
+    border-color: var(--header-bg);
+}
+
+/* ================================
+   WELCOME SCREEN
+   ================================ */
+
+.welcome {
+    text-align: center;
+
+    margin: auto;
+
+    max-width: 500px;
+
+    padding: 30px;
+}
+
+.welcome-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.welcome h2 {
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: var(--secondary-text);
+
+    line-height: 1.6;
+}
+
+/* ================================
+   TYPING INDICATOR
+   ================================ */
+
+.typing {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 5px;
+}
+
+.typing span {
+    width: 7px;
+    height: 7px;
+
+    background: var(--secondary-text);
+
+    border-radius: 50%;
+
+    animation: typingAnimation 1.2s infinite;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        align-items: stretch;
+    }
+
+    .chat-container {
+        width: 100%;
+        height: 100vh;
+
+        border-radius: 0;
+    }
+
+    .chat-header {
+        padding: 14px;
+    }
+
+    .header-title h1 {
+        font-size: 17px;
+    }
+
+    .header-title p {
+        font-size: 11px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+
+        font-size: 20px;
+    }
+
+    .chat-box {
+        padding: 15px;
+    }
+
+    .message {
+        max-width: 88%;
+
+        font-size: 14px;
+    }
+
+    .input-area {
+        padding: 10px;
+    }
+
+    #user-input {
+        font-size: 14px;
+    }
+}
+
+/* ================================
+   DARK MODE TRANSITION
+   ================================ */
+
+body,
+.chat-container,
+.chat-box,
+.input-area,
+.quick-questions,
+.prediction-card,
+#user-input {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
