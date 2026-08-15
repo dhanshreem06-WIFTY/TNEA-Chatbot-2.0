@@ -1,4 +1,17 @@
+
+import pandas as pd
+
+df = pd.read_csv("tnea_cutoff_2025_clean.csv")
+
+print("TNEA DATA LOADED SUCCESSFULLY")
+print("Number of rows:", len(df))
+print("Columns:", df.columns.tolist())
+
+
+
+
 from flask import Flask, render_template, request, jsonify
+
 
 from chatbot.chatbot_engine import get_response
 
@@ -42,3 +55,4 @@ if __name__ == "__main__":
 
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
